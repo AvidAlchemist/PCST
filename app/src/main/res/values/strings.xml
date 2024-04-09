@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name" translatable="false">PCST</string>
     <string name="title_home">Главная</string>
-    <string name="title_dashboard">Мини-игры</string>
-    <string name="title_notifications">Статьи</string>
+    <string name="title_games">Мини-игры</string>
+    <string name="title_articles">Статьи</string>
+    <string name="theory_title_text">Создание надёжного пароля</string>
+    <string name="theory_article_text">Чтобы защититься от новейших методов взлома,
+    необходимо иметь надёжные пароли. Ниже перечислены следующие советы по созданию
+    надёжного пароля и проверки стойкости существующего:\n
+    1) Длина пароля - не менее 10-12 символов. \n
+    2) Избегайте простых последовательностей ("12345", "qwerty") - такие пароли
+    подбираются за считанные секунды. Также избегайте распространённых слов
+    ("password1"). \n
+    3) Чем больше в пароле разнотипных символов (таких как заглавные и строчные
+    буквы, символы и цифры), тем менее он предсказуем. \n
+    4) При использовании слов в пароле, расставляйте их нелогичным образом. \n
+    5) Каждый пароль должен быть уникальным. Повторное использование паролей может
+    скомпрометировать сразу несколько аккаунтов.</string>
+    <string name="theory_button">Понятно!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
