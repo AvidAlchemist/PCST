@@ -17,6 +17,8 @@ class GamesFragment : Fragment() {
     private lateinit var listGames : ArrayList<GamesModel>
     private lateinit var gamesRv : RecyclerView
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

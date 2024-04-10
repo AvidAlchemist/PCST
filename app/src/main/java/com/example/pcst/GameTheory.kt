@@ -14,8 +14,4 @@ class GameTheory : AppCompatActivity() {
         val textViewTitle : TextView = findViewById(R.id.theory_title_text)
         textViewTitle.text = transmittedTitle*/
     }
-
-    companion object {
-        const val TRANSMITTED_TITLE = "transmittedTitle"
-    }
 }
