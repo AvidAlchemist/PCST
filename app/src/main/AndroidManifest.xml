@@ -13,6 +13,18 @@
         android:theme="@style/Theme.PCST"
         tools:targetApi="31">
         <activity
+            android:name=".ArticlesTest"
+            android:exported="false" />
+        <activity
+            android:name=".GameTest"
+            android:exported="false" />
+        <activity
+            android:name=".GameTask"
+            android:exported="false" />
+        <activity
+            android:name=".ArticlesTheory"
+            android:exported="false" />
+        <activity
             android:name=".GameTheory"
             android:exported="false" />
         <activity

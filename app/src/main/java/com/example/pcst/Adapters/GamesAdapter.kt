@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcst.GameTheory
 import com.example.pcst.Models.GamesModel
+import com.example.pcst.R
 import com.example.pcst.databinding.GamesRvItemBinding
 
 
@@ -31,10 +31,27 @@ class GamesAdapter(
         holder.itemName.text = listModel.getItemName()
         holder.itemDifficulty.text = listModel.getItemDifficulty()
         listModel.getItemImage()?.let { holder.itemImage.setImageResource(it) }
-       holder.itemView.setOnClickListener {
-            context.startActivity(Intent(context, GameTheory::class.java) )
-        }
 
+        holder.item.setOnClickListener {
+            val intent = Intent(context, GameTheory::class.java)
+            when (holder.itemName.text)
+            {
+                context.getString(R.string.rsaTitle) -> {
+                     intent.putExtra("gameTheoryTitle",context.getString(R.string.rsaTitle))
+                     intent.putExtra("gameTheoryArticle", context.getString(R.string.rsaText))
+                 }
+                context.getString(R.string.passwordTitle) -> {
+                    intent.putExtra("gameTheoryTitle", context.getString(R.string.passwordTitle))
+                    intent.putExtra("gameTheoryArticle", context.getString(R.string.passwordText))
+                }
+                context.getString(R.string.twofactorTitle) -> {
+                    intent.putExtra("gameTheoryTitle",  context.getString(R.string.twofactorTitle))
+                    intent.putExtra("gameTheoryArticle", context.getString(R.string.twofactorText))
+                }
+
+            }
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -46,6 +63,8 @@ class GamesAdapter(
         val itemImage = binding.gamesItemImage
         val itemName = binding.gamesItemName
         val itemDifficulty =binding.gamesItemDifficulty
+
+        val item = binding.root
     }
 
 }

@@ -1,10 +1,13 @@
 package com.example.pcst.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pcst.ArticlesTheory
 import com.example.pcst.Models.ArticlesModel
+import com.example.pcst.R
 import com.example.pcst.databinding.ArticlesRvItemBinding
 
 
@@ -29,6 +32,26 @@ class ArticlesAdapter(
         holder.itemTime.text = listModel.getItemTime()
         listModel.getItemImage()?.let { holder.itemImage.setImageResource(it) }
 
+        holder.item.setOnClickListener {
+            val intent = Intent(context, ArticlesTheory::class.java)
+            when (holder.itemName.text)
+            {
+                context.getString(R.string.rsaFactsTitle) -> {
+                    intent.putExtra("articlesTitleImage", R.drawable.rsa_authors)
+                    intent.putExtra("articlesText", context.getString(R.string.rsaFactsText))
+                }
+                context.getString(R.string.cryptanalysisTitle) -> {
+                    intent.putExtra("articlesTitleImage", R.drawable.cryptanalysis)
+                    intent.putExtra("articlesText", context.getString(R.string.cryptanalysisText))
+                }
+                context.getString(R.string.shannonTitle) -> {
+                    intent.putExtra("articlesTitleImage", R.drawable.shannon)
+                    intent.putExtra("articlesText",context.getString(R.string.shannonText))
+                }
+
+            }
+            context.startActivity(intent)
+        }
 
     }
 
@@ -40,5 +63,7 @@ class ArticlesAdapter(
         val itemImage = binding.articlesItemImage
         val itemName = binding.articlesItemName
         val itemTime =binding.articlesItemTime
+
+        val item = binding.root
     }
 }

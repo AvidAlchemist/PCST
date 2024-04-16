@@ -31,9 +31,9 @@ class ArticlesFragment : Fragment() {
         articlesRv = view.findViewById(R.id.articles_RV)
 
         listArticles = ArrayList()
-        listArticles.add(ArticlesModel(R.drawable.image_articles, "Facts about RSA", "2 mins"))
-        listArticles.add(ArticlesModel(R.drawable.image_articles, "Cryptanalysis", "5 mins"))
-        listArticles.add(ArticlesModel(R.drawable.image_articles, "Claude Shannon", "3 mins"))
+        listArticles.add(ArticlesModel(R.drawable.image_articles, getString(R.string.rsaFactsTitle), "2 мин"))
+        listArticles.add(ArticlesModel(R.drawable.image_articles, getString(R.string.cryptanalysisTitle), "5 мин"))
+        listArticles.add(ArticlesModel(R.drawable.image_articles, getString(R.string.shannonTitle), "3 мин"))
 
         articlesAdapter = ArticlesAdapter(requireContext(), listArticles)
 

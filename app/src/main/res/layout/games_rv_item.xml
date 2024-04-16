@@ -34,14 +34,15 @@
 
         <TextView
             android:id="@+id/games_item_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="Game 1"
+            android:layout_marginStart="16dp"
+            android:text="Двухфакторная аутентификация"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/gamesCardView"
+            app:layout_constraintEnd_toStartOf="@+id/games_item_difficulty"
             app:layout_constraintStart_toEndOf="@+id/gamesCardView"
             app:layout_constraintTop_toTopOf="@+id/gamesCardView" />
 
@@ -49,29 +50,16 @@
             android:id="@+id/games_item_difficulty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginEnd="44dp"
-            android:text="Easy"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:text="@string/difficultyEasy"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/games_item_name"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/games_item_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="idk"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/gamesCardView"
-            app:layout_constraintEnd_toEndOf="@id/games_item_difficulty"
-            app:layout_constraintStart_toStartOf="@id/games_item_difficulty"
-            app:layout_constraintTop_toBottomOf="@+id/games_item_name" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"

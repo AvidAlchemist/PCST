@@ -7,50 +7,51 @@
     android:orientation="vertical"
     tools:context=".GameTheory">
 
-    <TextView
-        android:id="@+id/theory_title_text"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/articles_title_image"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
         app:layout_constraintVertical_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/theory_article_text"
-        android:layout_margin="20dp"
-        android:text="@string/passwordTitle"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:textColor="@color/black"
-        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintBottom_toTopOf="@id/articles_text"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/rsa_authors"
         android:gravity="center"/>
 
     <TextView
-        android:id="@+id/theory_article_text"
+        android:id="@+id/articles_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:lineSpacingMultiplier="1.2"
-        android:text="@string/passwordText"
+        android:text="Something.."
         android:textColor="@color/black"
         android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toTopOf="@id/theory_button"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/articles_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/theory_title_text"
-        app:layout_constraintVertical_weight="7" />
+        app:layout_constraintTop_toBottomOf="@id/articles_title_image"
+        app:layout_constraintVertical_weight="6" />
 
     <Button
-        android:id="@+id/theory_button"
+        android:id="@+id/articles_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/theory_article_text"
+        app:layout_constraintTop_toBottomOf="@id/articles_text"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/gotIt_button"
         android:fontFamily="casual"
         android:textSize="16sp"
-        android:layout_margin = "20dp"/>
+        android:layout_margin="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
