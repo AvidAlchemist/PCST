@@ -22,7 +22,7 @@
         android:id="@+id/articles_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/text_view_background"
         android:elevation="10dp"
         android:padding="8dp"

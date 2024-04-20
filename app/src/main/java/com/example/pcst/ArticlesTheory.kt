@@ -16,8 +16,13 @@ class ArticlesTheory : AppCompatActivity() {
         setContentView(binding.root)
 
         val articlesTitleImage = intent.getIntExtra("articlesTitleImage", 0)
-
         val articlesText= intent.getStringExtra("articlesText")
+        val articlesTestText= intent.getStringExtra("articlesTestText")
+        val articlesTestCorrect= intent.getStringExtra("articlesTestCorrect")
+        val articlesTestAnswer_1= intent.getStringExtra("articlesTestAnswer_1")
+        val articlesTestAnswer_2= intent.getStringExtra("articlesTestAnswer_2")
+        val articlesTestAnswer_3= intent.getStringExtra("articlesTestAnswer_3")
+        val articlesTestAnswer_4= intent.getStringExtra("articlesTestAnswer_4")
 
         binding.articlesTitleImage.setImageResource(articlesTitleImage)
         binding.articlesText.text = articlesText
@@ -25,39 +30,18 @@ class ArticlesTheory : AppCompatActivity() {
         val articlesContinueButton : Button = findViewById(R.id.articles_button)
         articlesContinueButton.setOnClickListener {
             val intent = Intent(this, ArticlesTest::class.java)
-            when (binding.articlesText.text) {
-                getString(R.string.rsaFactsText) -> {
-                    intent.putExtra("repetitionTitle",getString(R.string.repetitionTitle))
-                    intent.putExtra("articlesTestText", getString(R.string.rsaFactsTestText))
-                    intent.putExtra("articlesTestCorrect", getString(R.string.rsaFactsCorrect))
-                    intent.putExtra("articlesTestAnswer_1", getString(R.string.rsaFactsAnswer_1))
-                    intent.putExtra("articlesTestAnswer_2", getString(R.string.rsaFactsAnswer_2))
-                    intent.putExtra("articlesTestAnswer_3", getString(R.string.rsaFactsAnswer_3))
-                    intent.putExtra("articlesTestAnswer_4", getString(R.string.rsaFactsAnswer_4))
 
-                }
-                getString(R.string.cryptanalysisText) -> {
-                    intent.putExtra("repetitionTitle",getString(R.string.repetitionTitle))
-                    intent.putExtra("articlesTestText", getString(R.string.cryptanalysisTestText))
-                    intent.putExtra("articlesTestCorrect", getString(R.string.cryptanalysisCorrect))
-                    intent.putExtra("articlesTestAnswer_1", getString(R.string.cryptanalysisAnswer_1))
-                    intent.putExtra("articlesTestAnswer_2", getString(R.string.cryptanalysisAnswer_2))
-                    intent.putExtra("articlesTestAnswer_3", getString(R.string.cryptanalysisAnswer_3))
-                    intent.putExtra("articlesTestAnswer_4", getString(R.string.cryptanalysisAnswer_4))
-                }
-                getString(R.string.shannonText) -> {
-                    intent.putExtra("repetitionTitle",getString(R.string.repetitionTitle))
-                    intent.putExtra("articlesTestText", getString(R.string.shannonTestText))
-                    intent.putExtra("articlesTestCorrect", getString(R.string.shannonCorrect))
-                    intent.putExtra("articlesTestAnswer_1", getString(R.string.shannonAnswer_1))
-                    intent.putExtra("articlesTestAnswer_2", getString(R.string.shannonAnswer_2))
-                    intent.putExtra("articlesTestAnswer_3", getString(R.string.shannonAnswer_3))
-                    intent.putExtra("articlesTestAnswer_4", getString(R.string.shannonAnswer_4))
-                }
-            }
+            intent.putExtra("repetitionTitle",getString(R.string.repetitionTitle))
+            intent.putExtra("articlesTestText", articlesTestText)
+            intent.putExtra("articlesTestCorrect", articlesTestCorrect)
+            intent.putExtra("articlesTestAnswer_1", articlesTestAnswer_1)
+            intent.putExtra("articlesTestAnswer_2", articlesTestAnswer_2)
+            intent.putExtra("articlesTestAnswer_3", articlesTestAnswer_3)
+            intent.putExtra("articlesTestAnswer_4", articlesTestAnswer_4)
+
             startActivity(intent)
             finish()
+            }
         }
 
     }
-}

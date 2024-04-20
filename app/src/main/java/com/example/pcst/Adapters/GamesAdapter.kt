@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcst.GameTheory
 import com.example.pcst.Models.GamesModel
@@ -34,21 +35,22 @@ class GamesAdapter(
 
         holder.item.setOnClickListener {
             val intent = Intent(context, GameTheory::class.java)
-            when (holder.itemName.text)
-            {
-                context.getString(R.string.rsaTitle) -> {
-                     intent.putExtra("gameTheoryTitle",context.getString(R.string.rsaTitle))
-                     intent.putExtra("gameTheoryArticle", context.getString(R.string.rsaText))
-                 }
-                context.getString(R.string.passwordTitle) -> {
-                    intent.putExtra("gameTheoryTitle", context.getString(R.string.passwordTitle))
-                    intent.putExtra("gameTheoryArticle", context.getString(R.string.passwordText))
+            for (item in listArray) {
+                if (holder.itemName.text == item.getItemName())
+                {
+                    intent.putExtra("gameTheoryTitle",item.getItemTheoryTitle())
+                    intent.putExtra("gameTheoryArticle", item.getItemTheoryArticle())
+                    intent.putExtra("gameTaskTitle",item.getItemTaskTitle())
+                    intent.putExtra("gameTaskText", item.getItemTaskText())
+                    intent.putExtra("gameTaskTip", item.getItemTaskTip())
+                    intent.putExtra("gameTaskCorrect", item.getItemTaskCorrect())
+                    intent.putExtra("gameTestText", item.getItemTestText())
+                    intent.putExtra("gameTestCorrect", item.getItemTestCorrect())
+                    intent.putExtra("gameTestAnswer_1", item.getItemTestAnswer_1())
+                    intent.putExtra("gameTestAnswer_2", item.getItemTestAnswer_2())
+                    intent.putExtra("gameTestAnswer_3", item.getItemTestAnswer_3())
+                    intent.putExtra("gameTestAnswer_4", item.getItemTestAnswer_4())
                 }
-                context.getString(R.string.twofactorTitle) -> {
-                    intent.putExtra("gameTheoryTitle",  context.getString(R.string.twofactorTitle))
-                    intent.putExtra("gameTheoryArticle", context.getString(R.string.twofactorText))
-                }
-
             }
             context.startActivity(intent)
         }

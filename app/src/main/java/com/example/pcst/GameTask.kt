@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.example.pcst.databinding.ActivityGameTaskBinding
 import com.example.pcst.databinding.ActivityGameTheoryBinding
 
@@ -21,7 +22,12 @@ class GameTask : AppCompatActivity() {
         val gameTaskText = intent.getStringExtra("gameTaskText")
         val gameTaskTip = intent.getStringExtra("gameTaskTip")
         val gameTaskCorrect = intent.getStringExtra("gameTaskCorrect")
-        val gameTaskID = intent.getStringExtra("gameTaskID")
+        val gameTestText = intent.getStringExtra("gameTestText")
+        val gameTestCorrect = intent.getStringExtra("gameTestCorrect")
+        val gameTestAnswer_1 = intent.getStringExtra("gameTestAnswer_1")
+        val gameTestAnswer_2 = intent.getStringExtra("gameTestAnswer_2")
+        val gameTestAnswer_3 = intent.getStringExtra("gameTestAnswer_3")
+        val gameTestAnswer_4 = intent.getStringExtra("gameTestAnswer_4")
 
         binding.taskTitleText.text = gameTaskTitle
         binding.taskArticleText.text = gameTaskText
@@ -29,39 +35,18 @@ class GameTask : AppCompatActivity() {
 
         val intent = Intent(this, GameTest::class.java)
         intent.putExtra("repetitionTitle", getString(R.string.repetitionTitle))
-        when(gameTaskID.toString()) {
-            "RSA" -> {
-                intent.putExtra("gameTestText", getString(R.string.rsaTestText))
-                intent.putExtra("gameTestCorrect", getString(R.string.rsaTestCorrect))
-                intent.putExtra("gameTestAnswer_1", getString(R.string.rsaAnswer_1))
-                intent.putExtra("gameTestAnswer_2", getString(R.string.rsaAnswer_2))
-                intent.putExtra("gameTestAnswer_3", getString(R.string.rsaAnswer_3))
-                intent.putExtra("gameTestAnswer_4", getString(R.string.rsaAnswer_4))
-            }
-            "Password" -> {
-                intent.putExtra("gameTestText", getString(R.string.passwordTestText))
-                intent.putExtra("gameTestCorrect", getString(R.string.passwordTestCorrect))
-                intent.putExtra("gameTestAnswer_1", getString(R.string.passwordAnswer_1))
-                intent.putExtra("gameTestAnswer_2", getString(R.string.passwordAnswer_2))
-                intent.putExtra("gameTestAnswer_3", getString(R.string.passwordAnswer_3))
-                intent.putExtra("gameTestAnswer_4", getString(R.string.passwordAnswer_4))
-            }
-            "2FA" -> {
-                intent.putExtra("gameTestText", getString(R.string.twofactorTestText))
-                intent.putExtra("gameTestCorrect", getString(R.string.twofactorTestCorrect))
-                intent.putExtra("gameTestAnswer_1", getString(R.string.twofactorAnswer_1))
-                intent.putExtra("gameTestAnswer_2", getString(R.string.twofactorAnswer_2))
-                intent.putExtra("gameTestAnswer_3", getString(R.string.twofactorAnswer_3))
-                intent.putExtra("gameTestAnswer_4", getString(R.string.twofactorAnswer_4))
-            }
+                intent.putExtra("gameTestText", gameTestText)
+                intent.putExtra("gameTestCorrect",gameTestCorrect)
+                intent.putExtra("gameTestAnswer_1", gameTestAnswer_1)
+                intent.putExtra("gameTestAnswer_2",gameTestAnswer_2)
+                intent.putExtra("gameTestAnswer_3", gameTestAnswer_3)
+                intent.putExtra("gameTestAnswer_4", gameTestAnswer_4)
 
-        }
         val gameTaskContinue : Button = findViewById(R.id.task_button_continue)
         gameTaskContinue.setOnClickListener {
 
             val passwordCheck = findViewById<EditText>(R.id.editTextNumberPassword)
-            if(passwordCheck.text.toString() == gameTaskCorrect.toString())
-            {
+            if(passwordCheck.text.toString() == gameTaskCorrect.toString()) {
                 startActivity(intent)
                 finish()
             }
@@ -72,8 +57,6 @@ class GameTask : AppCompatActivity() {
 
         val gameTaskSkip : Button = findViewById(R.id.task_button_skip)
         gameTaskSkip.setOnClickListener {
-            //val intent = Intent(this, GameTest::class.java)
-
             startActivity(intent)
             finish()
         }

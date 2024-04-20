@@ -34,21 +34,19 @@ class ArticlesAdapter(
 
         holder.item.setOnClickListener {
             val intent = Intent(context, ArticlesTheory::class.java)
-            when (holder.itemName.text)
-            {
-                context.getString(R.string.rsaFactsTitle) -> {
-                    intent.putExtra("articlesTitleImage", R.drawable.rsa_authors)
-                    intent.putExtra("articlesText", context.getString(R.string.rsaFactsText))
-                }
-                context.getString(R.string.cryptanalysisTitle) -> {
-                    intent.putExtra("articlesTitleImage", R.drawable.cryptanalysis)
-                    intent.putExtra("articlesText", context.getString(R.string.cryptanalysisText))
-                }
-                context.getString(R.string.shannonTitle) -> {
-                    intent.putExtra("articlesTitleImage", R.drawable.shannon)
-                    intent.putExtra("articlesText",context.getString(R.string.shannonText))
-                }
+            for (item in listArray) {
+                if (holder.itemName.text == item.getItemName())
+                {
+                    intent.putExtra("articlesTitleImage", item.getItemTitleImage())
+                    intent.putExtra("articlesText", item.getItemText())
+                    intent.putExtra("articlesTestText", item.getItemTestText())
+                    intent.putExtra("articlesTestCorrect", item.getItemTestCorrect())
+                    intent.putExtra("articlesTestAnswer_1", item.getItemTestAnswer_1())
+                    intent.putExtra("articlesTestAnswer_2", item.getItemTestAnswer_2())
+                    intent.putExtra("articlesTestAnswer_3", item.getItemTestAnswer_3())
+                    intent.putExtra("articlesTestAnswer_4", item.getItemTestAnswer_4())
 
+                }
             }
             context.startActivity(intent)
         }
