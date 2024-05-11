@@ -42,14 +42,31 @@ class GameTest : AppCompatActivity() {
 
             when {
                 answerFirst.text.toString() == gameTestCorrect.toString() && answerFirst.isChecked
-                -> finish()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 answerSecond.text.toString() == gameTestCorrect.toString() && answerSecond.isChecked
-                -> finish()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 answerThird.text.toString() == gameTestCorrect.toString() && answerThird.isChecked
-                -> finish()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 answerFourth.text.toString() == gameTestCorrect.toString()  && answerFourth.isChecked
-                -> finish()
-                else -> Toast.makeText(this, "Wrong answer, try again.", Toast.LENGTH_SHORT).show()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
+                else -> Toast.makeText(this, "Неправильный ответ!",
+                    Toast.LENGTH_SHORT).show()
             }
 
         }

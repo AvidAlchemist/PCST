@@ -51,7 +51,7 @@ class GameTask : AppCompatActivity() {
                 finish()
             }
             else {
-                Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Неправильный ответ!", Toast.LENGTH_SHORT).show()
             }
         }
 

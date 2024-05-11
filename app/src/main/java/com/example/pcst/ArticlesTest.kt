@@ -39,14 +39,31 @@ class ArticlesTest : AppCompatActivity() {
 
             when {
                 answerFirst.text.toString() == articlesTestCorrect.toString() && answerFirst.isChecked
-                -> finish()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 answerSecond.text.toString() == articlesTestCorrect.toString() && answerSecond.isChecked
-                -> finish()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 answerThird.text.toString() == articlesTestCorrect.toString() && answerThird.isChecked
-                -> finish()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 answerFourth.text.toString() == articlesTestCorrect.toString()  && answerFourth.isChecked
-                -> finish()
-                else -> Toast.makeText(this, "Wrong answer, try again.", Toast.LENGTH_SHORT).show()
+                -> {
+                    finish()
+                    Toast.makeText(this, "Задание выполнено успешно!",
+                        Toast.LENGTH_SHORT).show()
+                }
+                else -> Toast.makeText(this, "Неправильный ответ!",
+                    Toast.LENGTH_SHORT).show()
             }
 
         }

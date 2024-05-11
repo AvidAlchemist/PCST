@@ -62,7 +62,7 @@ class GamesFragment : Fragment() {
             getString(R.string.twofactorTitle), getString(R.string.twofactorText),
             getString(R.string.twofactorTaskTitle), getString(R.string.twofactorTaskText),
             getString(R.string.twofactorTaskTip), getString(R.string.twofactorTaskCorrect),
-            getString(R.string.twofactorTestText), getString(R.string.passwordTestCorrect),
+            getString(R.string.twofactorTestText), getString(R.string.twofactorTestCorrect),
             getString(R.string.twofactorAnswer_1), getString(R.string.twofactorAnswer_2),
             getString(R.string.twofactorAnswer_3), getString(R.string.twofactorAnswer_4)
             ))

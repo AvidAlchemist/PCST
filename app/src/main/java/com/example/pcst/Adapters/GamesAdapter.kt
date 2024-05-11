@@ -4,11 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcst.GameTheory
 import com.example.pcst.Models.GamesModel
-import com.example.pcst.R
 import com.example.pcst.databinding.GamesRvItemBinding
 
 

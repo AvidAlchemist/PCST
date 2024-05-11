@@ -92,7 +92,7 @@ class GamesModel {
         return itemTestAnswer_4
     }
 
-    fun setItemImage(itemImage: Int?){
+    /*fun setItemImage(itemImage: Int?){
         this.itemImage = itemImage
     }
 
@@ -102,7 +102,7 @@ class GamesModel {
 
     fun setItemDifficulty(itemDifficulty: String){
         this.itemDifficulty = itemDifficulty
-    }
+    }*/
 
 
 }
